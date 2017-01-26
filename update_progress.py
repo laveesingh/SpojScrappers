@@ -16,7 +16,7 @@ def solve():
 		'''Data dumping format will be
 		InitialScore CummulativeIncrementSum
 		'''
-		f = open("progress.txt", 'a+')
+		f = open("progress_data.pickle", 'a+')
 		print "fetching old scores"
 		linit, lfinal = pickle.load(f)
 		rinit, rfinal = pickle.load(f)
@@ -33,8 +33,8 @@ def solve():
 		kinit = kscore
 		print "score updated, writing to the file"
 		# Erase contents of the file
-		open('progress.txt', 'w').close()
-		f = open("progress.txt", "a+")
+		open('progress_data.pickle', 'w').close()
+		f = open("progress_data.pickle", "a+")
 		pickle.dump((linit, lfinal), f)
 		pickle.dump((rinit, rfinal), f)
 		pickle.dump((kinit, kfinal), f)
